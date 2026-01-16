@@ -1,0 +1,34 @@
+package comAbbyHamann;
+import java.util.Scanner;
+public class SwapNumsWithoutTempVar {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.print("Enter the first number");
+		int int1 = scnr.nextInt();
+		
+		System.out.print("Enter the second number");
+		int int2 = scnr.nextInt();
+		int1 = int1+ int2;
+		int2 = int1 - int2;
+		int1 = int1 - int2;
+		
+		System.out.print("The first number is " + int1 + "\n");
+		System.out.print("The second number is " + int2);
+
+    System.out.print("Enter the first number");
+		int int1 = scnr.nextInt();
+		
+		System.out.print("Enter the second number");
+		int int2 = scnr.nextInt();
+		int1 = int1+ int2;
+		int2 = int1 - int2;
+		int1 = int1 - int2;
+		
+		System.out.print("The first number is " + int1 + "\n");
+		System.out.print("The second number is " + int2);
+
+	}
+
+}
