@@ -1,0 +1,13 @@
+System.out.println("Enter a kind of relative:");
+		String relative = scnr.next();
+		
+		System.out.println("Enter a kind of food:");
+		String food = scnr.next();
+		
+		System.out.println("Enter an adjective:");
+		String adjective = scnr.next();
+		
+		System.out.println("Enter a time period:");
+		String time = scnr.next();
+		
+		System.out.print("My "+ relative+ " says eating "+ food + " will make me more " + adjective + ", so now I eat it " + time +".");
