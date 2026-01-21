@@ -1,0 +1,16 @@
+package comAbbyHamann;
+
+import java.util.Scanner;
+public class TollCalculation {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.print("Enter the time in military time:");
+		char hour = scnr.next().charAt(0);
+		
+		
+
+	}
+
+}
