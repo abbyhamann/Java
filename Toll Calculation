@@ -5,11 +5,28 @@ public class TollCalculation {
 
 	public static void main(String[] args) {
 		Scanner scnr = new Scanner(System.in);
-		
+		String hour;
 		System.out.print("Enter the time in military time:");
-		char hour = scnr.next().charAt(0);
-		
-		
+		String time = scnr.next();
+		if (time.charAt(1) != ':') {
+			char hour1 = time.charAt(0);
+			char hour2 = time.charAt(1);
+			hour = ""+ hour1+hour2 ;
+		}
+		else {
+			char hour1 = time.charAt(0);
+			hour = String.valueOf(hour1);
+		}
+		double toll;
+		if (hour.equals(1) || hour.equals(2) || hour.equals(3) || hour.equals(4) || hour.equals(5) ) {
+			toll = 1.55;
+		}
+		else if (hour.equals(6) || hour.equals(7) || hour.equals(8) || hour.equals(9) ) {
+			toll = 4.65;
+		}
+		else if (hour.equals(10) || hour.equals(11) || hour.equals(12) || hour.equals(4) || hour.equals(5) ) {
+			toll = 1.55;
+		}
 
 	}
 
