@@ -1,0 +1,28 @@
+package comAbbyHamann;
+
+import java.util.Scanner;
+public class CountVowels {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.println("Enter a string");
+		String string = scnr.nextLine();
+		
+		int vowels = 0;
+		
+		for (int i = 0; i < string.length(); i++) {
+			char letter = string.charAt(i);
+			
+			if (letter == 'a' || letter == 'e' || letter == 'i' || letter == 'o' || letter == 'u' ||
+				letter == 'A' || letter == 'E' || letter == 'I' || letter == 'O' || letter == 'U') {
+				vowels ++;
+			}
+		}
+		
+		System.out.print("The number of vowels is: " + vowels);
+		
+
+	}
+
+}
