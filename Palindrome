@@ -1,0 +1,27 @@
+package comAbbyHamann;
+import java.util.Scanner;
+
+public class Palindrome {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.println("Enter a string");
+		String input = scnr.nextLine();
+		String str = input.toLowerCase();
+		String reversed = "";
+		
+		for (int i = str.length() - 1; i >= 0; i--) {
+			reversed += str.charAt(i);
+			
+		}
+		if (str.equals(reversed)) {
+			System.out.print("The string is a palindrome.");
+		}
+		else {
+			System.out.print("The string is not a palindrome.");
+		}
+
+	}
+
+}
