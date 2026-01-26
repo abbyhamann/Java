@@ -1,0 +1,15 @@
+package comAbbyHamann;
+import java.util.Scanner;
+
+public class ReverseString {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		
+		System.out.println("Enter a string");
+		String string = scnr.next();
+		
+		String reverse = new StringBuilder(string).reverse().toString();
+		System.out.println("The reverse is " + reverse);
+	}
+
+}
