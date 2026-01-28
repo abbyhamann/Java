@@ -1,0 +1,30 @@
+package comAbbyHamann;
+
+import java.util.Scanner;
+public class Array {
+
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		int [] numArray = new int[3];
+		int i;
+		int max = 0;
+		System.out.println("Enter 3 numbers");
+		
+		for (i = 0; i < numArray.length; ++i) {
+			numArray[i] = scnr.nextInt();
+			if (i == 0) {
+				max = numArray[i];
+			}
+			else if (i > 0) {
+				if (numArray[i] > numArray[i - 1]) {
+					max = numArray[i];
+				}
+			}
+			
+		}
+		
+		System.out.print("Maximum value: " + max);
+
+	}
+
+}
