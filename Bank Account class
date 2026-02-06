@@ -1,0 +1,58 @@
+package comAbbyHamann;
+
+import java.util.Scanner;
+
+	class BankAccount {
+		String account_num;
+		String act_holder_name;
+		float balance;
+		BankAccount (String account_num, String act_holder_name, float balance) {
+			this.account_num = account_num;
+			this.act_holder_name = act_holder_name;
+			this.balance = balance;
+			
+		}
+	
+		public static void displayAccountDetails(String account_num, String act_holder_name, float balance) {
+			System.out.println("Account Number: " + account_num);
+			System.out.println("Account Holder " + act_holder_name);
+			System.out.println("Initial Balance " + balance);
+		}
+		public void deposit(float depamt) {
+			this.balance += depamt;
+			System.out.println("Deposited: " + depamt);
+		}
+		public void withdraw(float debamt) {
+			if (this.balance - debamt >= 0) {
+				this.balance -= debamt;
+				System.out.println("Withdrawn: " + debamt);
+			}
+			else {
+				System.out.println("Insufficient Balance!");
+			}
+		}
+	}
+public class Lab2 {
+	public static void main(String[] args) {
+		Scanner scnr = new Scanner(System.in);
+		System.out.println("Please enter the account number, account holder's name, and balance, hitting \"Enter\" after each entry");
+		String account_num = scnr.nextLine();
+		String act_holder_name = scnr.nextLine();
+		float balance = scnr.nextFloat();
+		
+		BankAccount bank1 = new BankAccount(account_num, act_holder_name, balance);
+		
+		bank1.displayAccountDetails(account_num, act_holder_name, balance);
+		
+		System.out.println("Enter the amount you'd like to deposit");
+		float depamt = scnr.nextFloat();
+		bank1.deposit(depamt);
+		
+		System.out.println("Enter the amount you'd like to withdraw");
+		float debamt = scnr.nextFloat();
+		bank1.withdraw(debamt);
+		
+		System.out.println("Final Balance: " + bank1.balance);
+	}
+
+}
