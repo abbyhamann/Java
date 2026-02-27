@@ -1,0 +1,37 @@
+package comHamann;
+
+class Bank {
+	public double fixinterest() {
+		return 2.5;
+	}
+}
+class Arvest extends Bank{
+	public double fixinterest() {
+		return 3.5;
+	}
+}
+class BankofAmerica extends Bank{
+public double fixinterest() {
+		return 5.0;
+	}
+}
+class Citigroup extends Bank{
+public double fixinterest() {
+		return 1.3;
+	}
+}
+public class BankInterestRetreival {
+	public static void main(String [] args) {
+		Bank bobj = new Arvest();
+		double a = bobj.fixinterest();
+		Bank bobj2 = new BankofAmerica();
+		double b = bobj2.fixinterest();
+		Bank bobj3 = new Citigroup();
+		double c = bobj3.fixinterest();
+	
+		System.out.println(a);
+		System.out.println(b);
+		System.out.println(c);
+	
+	}
+}
