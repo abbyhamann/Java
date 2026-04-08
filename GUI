@@ -1,0 +1,109 @@
+package comHamann;
+
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+
+public class TravelTime extends JFrame implements ActionListener {
+	private JButton calcButton;
+	private JLabel distLabel;
+	private JLabel hrsFlyLabel;
+	private JLabel hrsDriveLabel;
+	private JTextField hrsFlyField;
+	private JTextField hrsDriveField;
+	private JFormattedTextField distField;
+	
+	TravelTime() {
+		GridBagConstraints layoutConst = null;
+		setTitle("Fly Drive Travel Tie Calculator");
+		
+		distLabel = new JLabel("Distance (miles):");
+		hrsFlyLabel = new JLabel("Flight time (hrs):");
+		hrsDriveLabel = new JLabel("Drivng time (hrs):");
+		
+		calcButton = new JButton("Calculate");
+		calcButton.addActionListener(this);
+		
+		hrsFlyField = new JTextField(15);
+		hrsFlyField.setEditable(false);
+		
+		distField = new JFormattedTextField(NumberFormat.getNumberInstance());
+		distField.setEditable(true);
+		distField.setText("0");
+		distField.setColumns(15);
+		
+		setLayout(new GridBagLayout());
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(10, 10, 10, 1);
+		layoutConst.gridx = 0;
+		layoutConst.gridy = 0;
+		add(distLabel, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(10, 1, 10, 10);
+		layoutConst.gridx = 1;
+		layoutConst.gridy = 0;
+		add(distField, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(10, 5, 10, 10);
+		layoutConst.gridx = 2;
+		layoutConst.gridy = 0;
+		add(calcButton, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(10, 0, 1, 10);
+		layoutConst.gridx = 1;
+		layoutConst.gridy = 1;
+		add(hrsFlyLabel, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(1, 0, 10, 10);
+		layoutConst.gridx = 1;
+		layoutConst.gridy = 2;
+		add(hrsFlyField, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(10, 0, 1, 10);
+		layoutConst.gridx = 2;
+		layoutConst.gridy = 1;
+		add(hrsDriveLabel, layoutConst);
+		
+		layoutConst = new GridBagConstraints();
+		layoutConst.insets = new Insets(1, 0, 10, 10);
+		layoutConst.gridx = 2;
+		layoutConst.gridy = 2;
+		add(hrsDriveField, layoutConst);
+	}
+	
+	public void actionPerformed(ActionEvent event) {
+		double totMiles;
+		double hrsFly;
+		double hrsDrive;
+		
+		totMiles = ((Number) distField.getValue()).doubleValue();
+		
+		if (totMiles >= 0.0) {
+			hrsFly = totMiles / 500.0;
+			hrsDrive = totMiles / 60.0;
+			
+			hrsFlyField.setText(Double.toString(hrsFly));
+			hrsDriveField.setText(Double.toString);
+		}
+	}
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
