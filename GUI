@@ -98,11 +98,18 @@ public class TravelTime extends JFrame implements ActionListener {
 			hrsDrive = totMiles / 60.0;
 			
 			hrsFlyField.setText(Double.toString(hrsFly));
-			hrsDriveField.setText(Double.toString);
+			hrsDriveField.setText(Double.toString(hrsFly));
+		}
+		else {
+			JOptionPane.showMessageDialog(this, "Enter a positive distance value:");
 		}
 	}
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		FlyDriveFrame myFrame = new FlyDriveFrame();
+
+		myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		myFrame.pack();
+		myFrame.setVisible(true);
 
 	}
 
